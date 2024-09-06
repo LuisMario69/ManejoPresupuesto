@@ -1,0 +1,50 @@
+﻿@model IEnumerable<TipoCuentaViewModel>
+@{
+    ViewData["Title"] = "Crear un tipo de cuenta";
+}
+
+<h1>Crear un tipo de cuenta</h1>
+
+<h5>
+    Crear cuenta
+</h5>
+
+<hr />
+
+<a class="btn btn-primary my-4" asp-action="crear">Crear cuenta</a>
+
+<div class="container text-center">
+    <div class="row align-items-center">
+        <div class="col-8">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var tipoC in Model)
+                    {
+                        <tr>
+                            <td>@tipoC.GsNombreTipoCuenta</td>
+                            <td>
+                                <input type="hidden" value="@tipoC.GsNombreTipoCuenta" />
+                                <a class="btn btn-primary" asp-action="editar" asp-route-gsId="@tipoC.GsIdTipoCuenta">Editar</a>
+                                <a class="btn btn-danger" asp-action="borrar" asp-route-id="@tipoC.GsIdTipoCuenta">Eliminar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-4">
+            <h1>
+               Tabla de Datos
+            </h1>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,21 @@
+﻿@model TipoCuentaViewModel
+
+@{
+    ViewData["Title"] = "Crear un tipo de cuenta";
+}
+
+<h1>Crear un tipo de cuenta</h1>
+<h5>
+    El tipo de cuenta se refiere a como podemos agrupar las cuentas, ejemplo:
+    Tarjeta de credito, cuentas debito, prestamos, etc
+</h5>
+
+<form asp-action="crear">
+    <div class="mb-3">
+        <hr />
+        <h5><label class="form-label py-2"> Ingresar nombre del tipo de cuenta</label></h5>
+        <div asp-validation-summary="All" class="text-danger"></div>
+       <input type="text" class="form-control" asp-for="GsNombreTipoCuenta"  /> 
+    </div>
+    <input type="submit" class="btn btn-primary" value="Enviar"/>
+</form>

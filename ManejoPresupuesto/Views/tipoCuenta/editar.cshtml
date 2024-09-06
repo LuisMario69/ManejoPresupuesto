@@ -1,0 +1,16 @@
+﻿@model TipoCuentaViewModel
+
+@{
+    ViewData["Title"] = "Editar nombre cuenta";
+}
+
+<h1>Editar tipo cuenta: @Model.GsNombreTipoCuenta</h1>
+<form asp-controller="TipoCuenta" asp-action="editar">
+    <input type="hidden" asp-for="GsIdTipoCuenta"/>
+    <div class="mb-3">
+        <hr />
+        <h5><label class="form-label py-2" asp-for="GsIdTipoCuenta"> Actualizar nombre de la cuenta</label></h5>
+        <input type="submit" class="btn btn-primary" value="Actualizar"/>
+        <a class="btn btn-primary" asp-action="Index" asp-controller="TipoCuenta">Volver</a>
+    </div>
+</form>

@@ -1,0 +1,16 @@
+﻿@model TipoCuentaViewModel
+@{
+    ViewData["Title"] = "Borrar tipo cuenta";
+}
+
+<h2 class="mb-3">¿Estas seguro de eliminar la cuenta "@Model.GsNombreTipoCuenta"?</h2>
+
+<h4>Si elimina la cuenta, esta se borrara</h4>
+
+<form asp-controller="TipoCuenta" asp-action="borrarTipoCuenta">
+    <input type="hidden" asp-for="GsIdTipoCuenta" />
+
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+
+    <a class="btn btn-secondary" asp-action="Index" asp-controller="TipoCuenta">Cancelar</a>
+</form>
